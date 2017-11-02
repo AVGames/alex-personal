@@ -1,0 +1,293 @@
+body{
+	background-image: url(http://cdn.wallpapersafari.com/27/34/7pYvaI.jpg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: fixed;
+    font-family:"Open Sans", Helvetica, Arial,;
+    border-radius: 2px;
+    padding: 0px;
+}
+
+/* final de pagina*/
+footer{
+	background-color:#2F3C4C;
+	padding: 5% 0% 2% 0%;
+	border-top: 1px solid;
+	border-bottom: 1px solid ;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    border-radius: 0px 0px 10px 10px;
+	
+}
+
+.nav-sidebar.col-sm-3{
+	border: 2px solid;
+	margin-right: 8px; 
+	text-align: center;
+}
+
+
+/* estilo de lestras en sus respectivas etiqeutas o clases */
+@media (min-width: 900px) {
+	article{
+		padding: 10px 40px;
+	    background-color: #272525;
+	    border-top: 2px solid ;
+	    border-right: 2px solid;
+	    border-left: 2px solid; 
+ }
+}
+
+@media (max-width: 900px) {
+	article {
+	 	padding: 10px 10px;
+		background-color: #272525;
+	 	background-color: #272525;
+		border-top: 2px solid ;
+		border-right: 2px solid;
+	    border-left: 2px solid; 
+  } 
+    .nav-sidebar { 
+	    width: 100%;
+	    padding: 25px 0; 
+	    border-right: 2px solid ;
+	  	border-top: 2px solid ;
+	    border-right: 2px solid;
+	    border-left: 2px solid; 
+	    border-radius: 10px 10px 0px 0px ;
+	    background-color:  #272525;
+	    border-bottom: 2px solid;
+}
+
+}
+
+/*inputs styles*/
+input, textarea{
+	padding: 8px;
+	border: 1px solid rgba(0,0,0, .05);
+	width: 100%;
+	font-size: 13px;
+}
+
+li {
+	margin-top: 10px;
+	font-size: 15px;
+	list-style: none;
+	color: white;
+}
+
+
+/*diseño de cabezera*/
+header.container{
+	background-color: #2F3C4C;
+	padding: 0px;
+	margin-bottom: 2%;
+}
+
+section.container{
+	background-color: white;
+}
+
+/* boton styles*/
+
+button.btn.btn-primary{
+	width: 100%;
+}
+
+/*barras de navegacion*/
+
+	/*principal*/
+
+nav.navbar-inverse{
+	border-radius: 0px 0px 5px 5px ;	
+	margin-bottom: 0.5px ;
+}
+/* diseño de la barra de navegacion secundaria*/
+.nav-sidebar { 
+    width: 100%;
+    padding: 25px 0; 
+    border-right: 2px solid ;
+    background-color:  #272525;
+
+}
+
+.nav-sidebar a {
+    color: white;
+}
+
+.nav-sidebar .active a { 
+    background-color: #004081;  
+}
+
+/*form styles */
+.msform {
+	width: 60%;
+	margin: 10% auto;
+	text-align: center;
+	position: relative;
+	border-radius: 10px;
+	background: white;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+}
+input	{
+	border-radius: 3px;
+}
+.loginform {
+	width: 60%;
+	margin: 10% auto;
+	position: relative;
+	border-radius: 10px;
+	background: #D1D1D0;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 40px 30px;
+}
+/* titulos y subtitulos del form*/
+.fs-title {
+	font-size: 25px;
+	color: #2C3E50;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+.fs-subtitle {
+	font-size: 15px;
+	color: #666;
+	margin-bottom: 20px;
+}
+
+.container .text-style
+{
+  text-align: justify;
+  line-height: 23px;
+  margin: 0px 0px 0px 0px;
+  font-size: 15px;
+  color: #4C4C4C;
+}
+/*diseño de las cajas en la pagina de inicio (juegos)*/
+
+div.col-md-3 {
+	text-align: center;
+	font-size: 17px;
+	margin: 1%;
+}
+
+div.row.pc{
+	background-color: white;
+	margin-top: -2%;
+	border: 1px inset gray;
+}
+
+div.row{
+	background-color: white;
+	border: 1px inset gray;
+}
+
+/* color de subtitulos */
+strong{
+	color: #169bc2;
+}
+
+p{
+	color: white;
+}
+ 
+
+
+i.col-md-8{
+	font-size: 120%;
+	padding: 50px;
+ }
+
+
+button a{
+	color: white;
+}
+
+
+/*background del registro y el login */
+
+.modal-body{
+	background-color: #2F3C4C;
+}
+
+
+/* estilos de las imagenes */
+img {
+	height: 60%;
+	width: 40%;
+	margin-bottom: 30px;
+	position: relative;
+	opacity: 0.9;
+	margin-left: 10px;
+}
+
+.img-rounded{
+	margin-bottom: 10px;
+	width: 40%;
+	border-radius: 10px;
+	margin-right: 0px;
+}
+
+.img-circle{
+	margin-bottom: 10px;
+	margin-top: 5%;
+	width: 130px;
+	height: 130px;
+}
+
+/*imagenes de la pag de inicio*/
+img.img-inicio{
+	width: 150px;
+	margin-left:  auto;
+	margin-right:  auto;
+}
+
+/* imagen la barra de navegacion*/
+img.img{
+	margin-left: -1.3%;
+	width: 102.5%;
+	opacity: 0.8;
+}
+
+
+
+.col-md-6{
+	background-color: #2C343E;
+	padding: 5%;
+	border-radius: 10px;
+	color: gray;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.6)
+}
+
+.btn.btn-info {
+	width: 30%;
+	margin-top: 30px;
+
+}
+
+/*videos */
+/* CSS pantallas de 320px o superior */
+@media (max-width: 760px) {
+
+iframe {
+    width: 200px;
+    height: 150px;
+    margin-bottom: 30px;
+  } 
+
+}
+
+@media (min-width: 760px) {
+
+iframe {
+    width: 500px;
+    height: 350px;
+    margin-bottom: 30px;
+
+  } 
+
+}
+
+
+/* CSS pantalla 768px o superior */
+
