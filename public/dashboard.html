@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Admin Template</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="css/default.css" id="theme" rel="stylesheet">
+</head>
+
+<body class="container-fluid">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+     
+        <!-- End Top Navigation -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav slimscrollsidebar">
+                    <h3 class="page-header" align="center"> 
+                       <i class='fa fa-bars'></i> Admin panel
+                    </h3>
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="index.html"><i class="fa fa-clock-o fa-fw"></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="profile.html" ><i class="fa fa-user fa-fw" ></i>Profile</a>
+                    </li>
+                    <li>
+                        <a href="basic-table.html" ><i class="fa fa-table fa-fw" ></i>Basic Table</a>
+                    </li>
+
+                </ul>
+            </div>
+            
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page Content -->
+        <!-- ============================================================== -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Dashboard</h4> </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+                <!-- ============================================================== -->
+                <!-- Different data widgets -->
+                <!-- ============================================================== -->
+                <!-- .row -->
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Usuarios</h3>
+                            <ul class="list-inline">
+                                <li>
+                                    <div id="sparklinedash"></div>
+                                </li>
+                                <li><span class=" text-success">100</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">reseñas de juegos</h3>
+                            <ul class="list-inline">
+                                <li>
+                                    <div id="sparklinedash2"></div>
+                                </li>
+                                <li><span class=" text-purple">3</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">visitas</h3>
+                            <ul class="list-inline">
+                                <li>
+                                    <div id="sparklinedash3"></div>
+                                </li>
+                                <li><span class=" text-info">911</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            <table class="table table-condensed  table-hover">
+                <thead>
+                    <th width="20px"><strong>ID</strong></th>
+                    <th> Juego</th>
+                    <th>Descripcion</th>
+                    <th colspan="2">&nbsp;</th>
+                    <th><a  class="btn btn-primary btn-sm pull-right" href="{{ route('games.create') }}">Add</a></th>
+                </thead>
+            <tbody>
+                
+                @foreach($games as $game)
+                    <tr>
+                        <td>{{ $game->id }}</td>
+                        <td width="100px"> 
+                            <strong>{{ $game->name }}</strong><br>
+                        </td>
+                        <td>{{ $game->short }}</td>
+                        <td>
+                            <a href=" {{ route('games.show', $game->id) }}" class='btn btn-info btn-sm glyphicon glyphicon-eye-open'>Show</a>
+                        </td>
+                        <td>
+                            <a href=" {{ route('games.edit', $game->id) }}" class="btn btn-warning btn-sm glyphicon glyphicon-pencil">Edit</a>
+                        </td>
+
+                                                <td>
+                            <form action="{{action('GameController@destroy', $game->id) }}" method="POST" >
+                                {{csrf_field() }}
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-danger btn-sm glyphicon glyphicon-trash">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+
+                @endforeach
+            </tbody>
+        </table>
+        {!! $games->render()!!}
+
+                <!--/.row -->
+                <!-- table -->
+                <!-- chat-listing & recent comments -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- .col -->
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Recent Comments</h3>
+                            <div class="comment-center p-t-10">
+                                <div class="comment-body">
+                                    <div class="mail-contnet">
+                                        <h5>Pavan kumar</h5><span class="time">10:20 AM   20  may 2016</span>
+                                        <br/><span class="mail-desc">Donec ac condimentum massa. Etiam pellentesque pretium lacus. Phasellus ultricies dictum suscipit. Aenean commodo dui pellentesque molestie feugiat. Aenean commodo dui pellentesque molestie feugiat</span> 
+                                    </div>
+                                </div>
+                                <div class="comment-body">
+                                    <div class="mail-contnet">
+                                        <h5>Sonu Nigam</h5><span class="time">10:20 AM   20  may 2016</span>
+                                        <br/><span class="mail-desc">Donec ac condimentum massa. Etiam pellentesque pretium lacus. Phasellus ultricies dictum suscipit. Aenean commodo dui pellentesque molestie feugiat. Aenean commodo dui pellentesque molestie feugiat</span>
+                                    </div>
+                                </div>
+                                <div class="comment-body b-none">
+                                    <div class="mail-contnet">
+                                        <h5>Arijit singh</h5><span class="time">10:20 AM   20  may 2016</span>
+                                        <br/><span class="mail-desc">Donec ac condimentum massa. Etiam pellentesque pretium lacus. Phasellus ultricies dictum suscipit. Aenean commodo dui pellentesque molestie feugiat. Aenean commodo dui pellentesque molestie feugiat</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+            <footer class="footer text-center"> 2017 &copy; Gameblog.com </footer>
+        </div>
+        
+    </div>
+
+</body>
+
+</html>

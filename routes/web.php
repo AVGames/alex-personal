@@ -35,9 +35,16 @@ Route::get('/json', function () {
 	return $juegos;
 });
 
+Route::prefix('dashboard/admin/')->group(function () {
+	Route::resource('games', 'GameController');
+	Route::resource('users', 'UserController');
+});
 
-Route::resource('games', 'GameController');
-Route::resource('users', 'UserController');
+//Facebook routes 
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook.login');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
+
 
 
 
@@ -46,10 +53,12 @@ Auth::routes();
 
 Route::get ('home', 'HomeController@logout')->name('home');
 
-Route::get('/hs.php', 'HomeController@hs')->name('home');
+Route::get('/hs.php', 'HomeController@hs');
 
-Route::get('/lol.php', 'HomeController@lol')->name('home');
+Route::get('/lol.php', 'HomeController@lol');
 
-Route::get('/Infamous.php', 'HomeController@Infamous')->name('home');
+Route::get('/Infamous.php', 'HomeController@Infamous');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
+
+Route::get('/inicio', 'HomeController@inicio');

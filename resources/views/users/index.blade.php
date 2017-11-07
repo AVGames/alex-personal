@@ -1,18 +1,11 @@
 @extends('juegoslayout')
 
 @section('content')
-	
-	
-	<div class="col-sm-8 col-sm-offset-2">
-		<h1 class="page-header text-center">Users</h1>
-		<a class="btn btn-default" href="{{ route('games.index') }}">Games</a>
-		<a class="btn btn-default" href="{{ route('users.index') }}">Users</a>
-		<h2>
-			lista de juegos
-			
-		</h2>
-		<br>
-		<table class="table table-condensed table-hover">
+
+<div id="wrapper">
+  
+
+           	<table class="table table-condensed table-hover">
 			<thead>
 				<th width="20px"><strong>ID</strong></th>
 				<th > User</th>
@@ -61,6 +54,10 @@
 		</table>
 		{!! $users->render()!!}
 
-	</div>
+</div>
 
+               
+
+       
+	
 @endsection

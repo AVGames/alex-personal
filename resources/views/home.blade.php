@@ -15,7 +15,7 @@
                     @endif
 
                     You are logged in!
-                    <button class="btn btn-default pull-right"><a href="inicio.php">View Games !</a></button>
+                    <button class="btn btn-default pull-right"><a href="{{ action('HomeController@inicio') }}">View Games !</a></button>
                 </div>
             </div>
         </div>

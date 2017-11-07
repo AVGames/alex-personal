@@ -1,7 +1,7 @@
 <header>
 		<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container-fluid">
-    <a class="navbar-brand" href="inicio.php"><span class="glyphicon glyphicon-home"></span> Home</a>
+    <a class="navbar-brand" href="{{ action('HomeController@inicio') }}"><span class="glyphicon glyphicon-home"></span> Home</a>
   <!-- El logotipo y el icono que despliega el menú se agrupan
        para mostrarlos mejor en los dispositivos móviles -->
   <div class="navbar-header">
@@ -19,9 +19,9 @@
        otro elemento que se pueda ocultar al minimizar la barra -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
-		<li><a href="Infamous.php">Infamous</a></li>
-		<li><a href="hs.php">HearthStone</a></li>
-		<li><a href="lol.php">League of legend</a></li>
+		<li><a href="{{ action('HomeController@Infamous') }}">Infamous</a></li>
+		<li><a href="{{ action('HomeController@hs') }}">HearthStone</a></li>
+		<li><a href="{{ action('HomeController@lol') }}">League of legend</a></li>
     <li class="collapse navbar-collapse" id="app-navbar-collapse">
         @guest
             <li><a href="{{ route('login') }}" >Login</a></li>
@@ -33,7 +33,7 @@
                 </a>
 
                 <ul class="navbar-default dropdown-menu" role="menu">
-                    <li>
+                    <li class="col-xs-1">
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">
